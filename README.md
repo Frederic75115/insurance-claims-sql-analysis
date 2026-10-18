@@ -50,6 +50,8 @@ This query returns policy type IDs and the number of claims per policytypeid.
 | 3 | 1 |
 | 4 | 1 |
 
+Auto insurance, associated with a policy type id of 1, accounted for the largest share of claims, representing 40% of the five recorded claims. Home insurance, associated with a policy type id of 2, Life insurance, associated with a policy type id of 3, and Health insurance, associated with a policy type id of 4, each accounted for 20%.
+
 ### Monthly Claim Summary
 
 This query groups claims by month and year, calculates the number of claims and average claim amount for each month, and presents the results chronologically. Average claim amounts are rounded to two decimal places.
@@ -61,8 +63,6 @@ This query groups claims by month and year, calculates the number of claims and 
 | 2021-08-01 00:00:00:05 | 1 | 200000.00 |
 | 2021-09-01 00:00:00:05 | 1 | 150.00 |
 | 2021-10-01 00:00:00:05 | 1 | 300.00 |
-
-Auto insurance accounted for the largest share of claims, representing 40% of the five recorded claims. Home, Life, and Health insurance each accounted for 20%.
 
 Monthly claim frequency remained constant at one claim per month from June through October 2021, while average claim amounts ranged from $150 in September to $20,000 in August. The August peak was attributable to a single life insurance claim.
 
