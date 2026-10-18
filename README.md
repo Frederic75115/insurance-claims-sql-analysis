@@ -21,6 +21,7 @@ A PostgreSQL project exploring insurance claim frequency and average claim amoun
 ## Database Structure
 
 | Table | Purpose |
+|---|---|
 | Customers | Customer profiles and address information |
 | PolicyTypes | Auto, Home, Life, and Health insurance categories |
 | Policies | Customer coverage dates, policy types, and premiums |
