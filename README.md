@@ -43,22 +43,22 @@ The second query groups claims by month and year using DATE_TRUNC, counts the cl
 
 The query returns policy type IDs; names are included here for readability.
 
-| Policy Type ID | Policy Type | Total Claims |
-|---|---|---:|
-| 1 | Auto | [Enter result] |
-| 2 | Home | [Enter result] |
-| 3 | Life | [Enter result] |
-| 4 | Health | [Enter result] |
+| policytypeid | numberofclaims |
+|---|---:|
+| 1 | 2 |
+| 2 | 1 |
+| 3 | 1 |
+| 4 | 1 |
 
 ### Monthly Claim Summary
 
-| Month | Claim Frequency | Average Claim Amount |
+| claim_month | monthly_claim_frequency | monthly_avg_claim |
 |---|---:|---:|
-| June 2021 | [Enter result] | [Enter result] |
-| July 2021 | [Enter result] | [Enter result] |
-| August 2021 | [Enter result] | [Enter result] |
-| September 2021 | [Enter result] | [Enter result] |
-| October 2021 | [Enter result] | [Enter result] |
+| 2021-06-01 00:00:00:05 | 1 | 500.00 |
+| 2021-07-01 00:00:00:05 | 1 | 1000.00 |
+| 2021-08-01 00:00:00:05 | 1 | 200000.00 |
+| 2021-09-01 00:00:00:05 | 1 | 150.00 |
+| 2021-10-01 00:00:00:05 | 1 | 300.00 |
 
 [Add your findings here.]
 
