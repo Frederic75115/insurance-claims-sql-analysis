@@ -41,7 +41,7 @@ The second query groups claims by month and year using DATE_TRUNC, counts the cl
 
 ### Claims by Policy Type
 
-The query returns policy type IDs; names are included here for readability.
+This query returns policy type IDs and the number of claims per policytypeid.
 
 | policytypeid | numberofclaims |
 |---|---:|
@@ -52,6 +52,8 @@ The query returns policy type IDs; names are included here for readability.
 
 ### Monthly Claim Summary
 
+This query groups claims by month and year, calculates the number of claims and average claim amount for each month, and presents the results chronologically. Average claim amounts are rounded to two decimal places.
+
 | claim_month | monthly_claim_frequency | monthly_avg_claim |
 |---|---:|---:|
 | 2021-06-01 00:00:00:05 | 1 | 500.00 |
@@ -60,9 +62,11 @@ The query returns policy type IDs; names are included here for readability.
 | 2021-09-01 00:00:00:05 | 1 | 150.00 |
 | 2021-10-01 00:00:00:05 | 1 | 300.00 |
 
-[Add your findings here.]
+Auto insurance accounted for the largest share of claims, representing 40% of the five recorded claims. Home, Life, and Health insurance each accounted for 20%.
 
-These examples demonstrate the queries; the small dataset does not establish broader insurance trends.
+Monthly claim frequency remained constant at one claim per month from June through October 2021, while average claim amounts ranged from $150 in September to $20,000 in August. The August peak was attributable to a single life insurance claim.
+
+As each month contained only one claim, the monthly average equaled the individual claim amount. These results illustrate the importance of evaluating both claim frequency and claim amounts when assessing insurance activity.
 
 ## Indexing
 
