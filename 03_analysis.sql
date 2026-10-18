@@ -6,16 +6,17 @@
 -- Group and order the results by PolicyTypeID.
 
 with cte as (
-	select t.policytypeid, policyid 
+	select policytypename, t.policytypeid, policyid 
 	from policytypes t full outer join policies p 
 		on t.policytypeid = p.policytypeid 
 )
 
-select policytypeid, count(claimid) as numberofclaims 
+select policytypename, policytypeid, count(claimid) as numberofclaims 
 from cte t full outer join claims c 
 	on t.policyid = c.policyid 
-group by policytypeid 
+group by policytypeid, policytypename
 order by policytypeid;
+
 
 
 -- Query 2: Calculate monthly claim frequency and average claim amount.
