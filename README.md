@@ -39,30 +39,32 @@ The second query groups claims by month and year using DATE_TRUNC, counts the cl
 
 ## Results from the Supplied Data
 
-### Claims by Policy Type
+### Claims by Policy Type - The Result Table from the First Query in the 03_analysis.sql file.
 
-This query returns policy type IDs and the number of claims per policytypeid.
+The query returns each policy type’s name, ID, and total number of claims.
 
-| policytypeid | numberofclaims |
-|---|---:|
-| 1 | 2 |
-| 2 | 1 |
-| 3 | 1 |
-| 4 | 1 |
+| policytypename | policytypeid | numberofclaims |
+|---|---|---:|
+| `character varying(50)` | `[PK] integer` | `bigint` |
+| Auto | 1 | 2 |
+| Home | 2 | 1 |
+| Life | 3 | 1 |
+| Health | 4 | 1 |
 
-Auto insurance, associated with a policy type id of 1, accounted for the largest share of claims, representing 40% of the five recorded claims. Home insurance, associated with a policy type id of 2, Life insurance, associated with a policy type id of 3, and Health insurance, associated with a policy type id of 4, each accounted for 20%.
+Auto insurance accounted for the largest share of claims, with 2 claims (40% of the total). Home, Life, and Health insurance each had 1 claim, representing 20% each.
 
-### Monthly Claim Summary
+### Monthly Claim Summary - The Result Table from the Second Query in the 03_analysis.sql file.
 
 This query groups claims by month and year, calculates the number of claims and average claim amount for each month, and presents the results chronologically. Average claim amounts are rounded to two decimal places.
 
 | claim_month | monthly_claim_frequency | monthly_avg_claim |
 |---|---:|---:|
-| 2021-06-01 00:00:00:05 | 1 | 500.00 |
-| 2021-07-01 00:00:00:05 | 1 | 1000.00 |
-| 2021-08-01 00:00:00:05 | 1 | 200000.00 |
-| 2021-09-01 00:00:00:05 | 1 | 150.00 |
-| 2021-10-01 00:00:00:05 | 1 | 300.00 |
+| `timestamp with time zone` | `bigint` | `numeric` |
+| 2021-06-01 00:00:00-05 | 1 | 500.00 |
+| 2021-07-01 00:00:00-05 | 1 | 1000.00 |
+| 2021-08-01 00:00:00-05 | 1 | 20000.00 |
+| 2021-09-01 00:00:00-05 | 1 | 150.00 |
+| 2021-10-01 00:00:00-05 | 1 | 300.00 |
 
 Monthly claim frequency remained constant at one claim per month from June through October 2021, while average claim amounts ranged from $150 in September to $20,000 in August. The August peak was attributable to a single life insurance claim.
 
@@ -101,7 +103,7 @@ Use a fresh PostgreSQL database and open its Query Tool in pgAdmin 4. Run the sc
 | 4 | 04_indexes.sql |
 | 5 | 05_roles_permissions.sql |
 
-Run setup and insert scripts once. Repeating them can produce existing-object errors or duplicate data. The supplied inserts assume newly initialized IDs. Role creation requires an authorized account, and role names must not already exist on the PostgreSQL server.
+Run the setup and insert scripts once. Repeating them can produce existing-object errors or duplicate data. The supplied inserts assume newly initialized IDs. Role creation requires an authorized account, and role names must not already exist on the PostgreSQL server.
 
 ## Project Background
 
